@@ -1,0 +1,11 @@
+def BubbleSort(array):
+    swap = True
+    while swap:
+        swap = False
+        for index in range(len(array)-1):
+            if array[index] > array[index+1]:
+                tmp = array[index]
+                array[index] = array[index+1]
+                array[index+1] = tmp
+                swap=True
+    print(array)

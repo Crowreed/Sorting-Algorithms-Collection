@@ -1,0 +1,21 @@
+#only sort array with positive integers
+
+def counting_sort(array):
+    M = max(array)
+    count = [0]*M
+    for i in range(len(array)):
+        count[array[i]-1] = count[array[i]-1] + 1
+
+    pos=[0]*M
+    sort=[0]*len(array)
+    index=0
+    
+    for i in range(M):
+        pos[i]=index
+        index = index + count[i]
+
+    for i in range(len(array)):
+        sort[pos[array[i]-1]]=array[i]
+        pos[array[i]-1] = pos[array[i]-1]+1
+
+    print(sort)
